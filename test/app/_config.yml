@@ -1,0 +1,12 @@
+name: Your New Jekyll Site
+markdown: redcarpet
+pygments: true
+exclude: [ config.ru, fixtures]
+# permalink: :year-:month-:day/:title
+permalink: blog/:year/:month/:day/:title
+not_found: 404.html
+paginate: 5
+paginate_path: page:num
+# permalink: pretty
+# permalink: date
+# permalink: none
