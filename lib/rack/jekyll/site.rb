@@ -24,7 +24,7 @@ module Rack
           end
         else
           if not_found = files[@config.not_found]||files["/404.html"]
-            Rack::NotFound.new(not_found[:realpath]).call(env)
+            NotFound.new(not_found[:realpath]).call(env)
           else
             [404,{},["404 Not Found"]]
           end
