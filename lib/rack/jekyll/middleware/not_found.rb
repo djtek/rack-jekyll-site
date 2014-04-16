@@ -4,7 +4,7 @@ module Rack
       def initialize(path)
         file = F.expand_path(path)
         @content = F.read(file)
-        @length = F.size(file)
+        @length = F.size(file).to_s
       end
 
       def call(env)
