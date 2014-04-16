@@ -11,7 +11,7 @@ module Rack
       end
       
       def method_missing(key, *rest)
-        @options[key.to_s]||super
+        @options[key.to_s]
       end
       
       private
