@@ -9,7 +9,7 @@ module Rack
       
       def call(env)
         @request = Request.new(env)
-        if found = @files[@request.path_info]
+        if found = @files[@request.path_info]||@files[F.dirname(@request.path_info) << '.html']
           headers = { 'Last-Modified'  => found[:mtime] }
           
           if !expired?(found[:mtime])
