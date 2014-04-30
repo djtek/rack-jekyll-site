@@ -1,7 +1,6 @@
 module Rack
   module Jekyll
     class Config
-      # F = ::File
       JC = ::Jekyll::Configuration
       DEFAULTS = JC[JC::DEFAULTS]
       
