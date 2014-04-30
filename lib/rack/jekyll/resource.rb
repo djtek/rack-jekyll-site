@@ -46,7 +46,7 @@ module Rack
           else
             info[:status] = 200
             info[:content] = F.read(location)
-            info[:headers] = { 'Content-Type' => Mime.mime_type(F.extname(not_found)), 
+            info[:headers] = { 'Content-Type' => Mime.mime_type(F.extname(location)),
                                'Last-Modified' => last_modified_since }
           end
           info

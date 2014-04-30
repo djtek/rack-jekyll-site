@@ -42,6 +42,11 @@ class TestApp < Test::Unit::TestCase
       end
     end
     
+    define_method "test_#{method_name}_content_type" do
+      get url
+      assert_equal Rack::Mime.mime_type(F.extname(url)), last_response.headers['Content-Type']
+    end
+    
     if url.match(/index\.html$/)
       define_method "test_#{method_name}_without_ext" do
         get url.gsub(File.basename(url), '')
